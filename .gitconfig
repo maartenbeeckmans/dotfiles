@@ -1,0 +1,22 @@
+[user]
+	name = Maarten Beeckmans
+	email = maarten.beeckmans@student.hogent.be
+[push]
+	default = simple
+[github]
+	user = maartenbeeckmans
+[credential]
+	helper = cache --timeout=3600
+[color]
+  ui = true
+[alias]
+  co = checkout
+  l = log --pretty='format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar' --date=short --graph --all
+
+[core]
+	excludesfile = /home/bert/.gitignore_global
+	autocrlf = input
+[pull]
+	rebase = true
+[rebase]
+  autoStash = true
