@@ -1,2 +1,3 @@
 # dotfiles
+
 My configuration for Bash, Vim, Git, ...
