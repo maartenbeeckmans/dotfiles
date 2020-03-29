@@ -1,3 +1,14 @@
 # dotfiles
 
-My configuration for Bash, Vim, Git, ...
+Configurations:
+
+- dunst
+- i3
+- kitty
+- nitrogen
+- polybar
+- ranger
+- redshift
+- rofi
+- vim
+- zsh
