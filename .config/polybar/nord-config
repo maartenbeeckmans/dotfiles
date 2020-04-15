@@ -36,7 +36,7 @@ override-redirect = false
 # show-desktop: Display desktop (i3 only)
 
 # Top modules
-top-left = workspace-name i3 
+top-left = i3 
 top-center = title
 top-right = notify keyboard xbacklight alsa battery network-short date
 

@@ -100,3 +100,4 @@ format-prefix = " "
 format = <label>
 exec = python /home/maarten/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}'
 format-underline = #1db954
+label-maxlen = 50
