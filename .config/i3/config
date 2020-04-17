@@ -66,7 +66,7 @@ bindsym $mod+Return exec $terminal
 
 # Taking a screenshot
 bindsym --release Print exec --no-startup-id "scrot ~/screenshots/screenshot-%Y-%m-%d-%T.png; notify-send 'screenshot taken'"
-bindsym --release Shift+Print exec --no-startup-id "scrot -c -t 5 ~/screenshots/screenshot-%Y-%m-%d-%T.png; notif    y-send 'screenshot taken'"
+bindsym --release Shift+Print exec --no-startup-id "scrot --select ~/screenshots/screenshot-%Y-%m-%d-%T.png; notify-send 'screenshot taken'"
 
   ## Function Keys ##
 # Keyboard shortcuts for screen brightness
