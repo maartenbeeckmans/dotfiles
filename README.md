@@ -2,6 +2,7 @@
 
 Configurations:
 
+- alacritty
 - dunst
 - i3
 - kitty
