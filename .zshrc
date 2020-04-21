@@ -8,7 +8,7 @@ export ZSH="/home/maarten/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -114,8 +114,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
- alias ciscoconsole="sudo cu -l /dev/ttyUSB0 -s 9600"
- alias sshuttleopen='sshuttle --dns -vvr proxy02.inuits.eu:443 0.0.0.0/0 -x proxy02.inuits.eu:443 -D     --pidfile /tmp/inuits.pid'
+alias ciscoconsole="sudo cu -l /dev/ttyUSB0 -s 9600"
+alias sshuttleopen='sshuttle --dns -vvr proxy02.inuits.eu:443 0.0.0.0/0 -x proxy02.inuits.eu:443 -D     --pidfile /tmp/inuits.pid'
 alias sshuttleclose='if [ -f /tmp/inuits.pid > /dev/null ]; then killall sshuttle; else echo Tunnel     not active;fi'
 alias showtime="watch -n1 'date +%D%n%T | figlet -k'"
 alias gup="git pull --rebase; git submodule --quiet sync; git submodule update --init --recursive"
@@ -123,6 +123,7 @@ alias i3config="vim $HOME/.config/i3/config"
 alias zshrc="vim $HOME/.zshrc"
 alias gr="grep -r"
 alias vi="vim"
+alias vimwiki="vim $HOME/vimwiki/index.wiki"
 
 # Kitty configuration
 autoload -Uz compinit
@@ -130,4 +131,8 @@ compinit
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
 
-export TERM=xterm
+# Environment Variables
+export EDITOR=vim
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
