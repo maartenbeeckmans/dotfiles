@@ -46,6 +46,7 @@ exec_always --no-startup-id $HOME/.config/redshift/launch.sh
 exec_always --no-startup-id /usr/bin/start-pulseaudio-x11
 exec_always --no-startup-id /usr/bin/nitrogen --restore
 exec --no-startup-id /usr/bin/lxpolkit
+exec --no-startup-id /usr/bin/picom --config ${HOME}/.config/picom/picom.conf
 
 #################################################################
 # Keyboard shortcuts                                            #
