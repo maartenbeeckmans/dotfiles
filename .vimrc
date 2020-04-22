@@ -22,6 +22,27 @@ set statusline+=%*
 set noshowmode
 set relativenumber
 set hlsearch
+filetype plugin on
+syntax on
+set ttymouse=sgr
+
+"Custom alliasses
+command Spellen set spell spelllang=en_us
+command Spellnl set spell spelllang=nl_be
+
+" Vim functions
+function DisableNumbers()
+  set nonumber
+  set norelativenumber
+  echom "Numbers disabled"
+endfunction
+command Nonumber call DisableNumbers()
+function EnableNumbers()
+  set number
+  set relativenumber
+  echom "Numbers enabled"
+endfunction
+command Number call EnableNumbers()
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
