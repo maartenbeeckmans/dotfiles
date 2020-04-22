@@ -132,6 +132,7 @@ compinit
 kitty + complete setup zsh | source /dev/stdin
 
 # Environment Variables
+export TERM=xterm
 export EDITOR=vim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
