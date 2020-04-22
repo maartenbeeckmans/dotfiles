@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 	Plug 'arcticicestudio/nord-vim'
   Plug 'itchyny/lightline.vim'
+  Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " Enable Nord Colorscheme
@@ -29,6 +30,9 @@ let g:syntastic_check_on_wq = 0
 let g:lightline = {
   \ 'colorscheme': 'nord',
   \ }
+let g:vimwiki_list = [{
+  \ 'path': '~/vimwiki/',
+  \ }]
 
 "Disable arrow keys in Normal mode
 no <Up> <Nop>
