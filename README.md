@@ -1,6 +1,6 @@
 # dotfiles
 
-Configurations:
+## Configuration files:
 
 - alacritty
 - dunst
