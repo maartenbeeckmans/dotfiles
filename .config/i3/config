@@ -216,10 +216,3 @@ bindsym $mod+0 mode "$mode_system"
 # Assign Applications to workspace                              #
 #################################################################
 assign [class=Thunderbird|Rambox] 8
-
-
-#################################################################
-# Autostart applications                                        #
-#################################################################
-exec /usr/bin/thunderbird
-exec /usr/bin/rambox
