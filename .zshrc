@@ -124,6 +124,7 @@ alias zshrc="vim $HOME/.zshrc"
 alias gr="grep -r"
 alias vi="vim"
 alias vimwiki="vim $HOME/vimwiki/index.wiki"
+alias rankmirrors="curl -s 'https://www.archlinux.org/mirrorlist/?protocol=https&use_mirror_status=on' | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 25 - > /etc/pacman.d/mirrorlist"
 
 # Kitty configuration
 autoload -Uz compinit
