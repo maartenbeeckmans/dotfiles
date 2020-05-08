@@ -6,7 +6,7 @@ rsync -axvh $HOME/.zshrc ./.zshrc
 rsync -axvh $HOME/.vimrc ./.vimrc
 rsync -axvh $HOME/.config/alacritty/ ./.config/alacritty/
 rsync -axvh $HOME/.config/dunst/ ./.config/dunst/
-rsync -axvh $HOME/.config/fish ./.config/fish/
+rsync -axvh $HOME/.config/fish/ ./.config/fish/
 rsync -axvh $HOME/.config/i3/ ./.config/i3/
 rsync -axvh $HOME/.config/kitty/ ./.config/kitty/
 rsync -axvh $HOME/.config/nitrogen/ ./.config/nitrogen/
