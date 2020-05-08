@@ -64,7 +64,7 @@ bindsym $mod+Ctrl+m exec pavucontrol
 bindsym $mod+d exec rofi -dpi 135 -show-icons -theme base16-ocean -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns
 
 # start a terminal
-bindsym $mod+Return exec $terminal
+bindsym $mod+Return exec $terminal -e fish
 
 # Taking a screenshot
 bindsym --release Print exec --no-startup-id "scrot ~/screenshots/screenshot-%Y-%m-%d-%T.png; notify-send 'screenshot taken'"
