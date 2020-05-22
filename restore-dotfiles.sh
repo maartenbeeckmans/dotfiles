@@ -16,5 +16,6 @@ rsync -axvh ./.config/polybar/ $HOME/.config/polybar/
 rsync -axvh ./.config/ranger/ $HOME/.config/ranger/
 rsync -axvh ./.config/redshift/ $HOME/.config/redshift/
 rsync -axvh ./.config/rofi/ $HOME/.config/rofi/
+rsync -axvh ./.config/termite/ $HOME/.config/termite/
 
 echo "Restoring config files complete"

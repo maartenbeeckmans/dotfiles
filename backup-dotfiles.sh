@@ -16,5 +16,6 @@ rsync -axvh $HOME/.config/polybar/ ./.config/polybar/
 rsync -axvh $HOME/.config/ranger/ ./.config/ranger/
 rsync -axvh $HOME/.config/redshift/ ./.config/redshift/
 rsync -axvh $HOME/.config/rofi/ ./.config/rofi/
+rsync -axvh $HOME/.config/termite/ ./.config/termite/
 
 echo "Backing up config files complete"
