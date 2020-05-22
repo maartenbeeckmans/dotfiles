@@ -13,6 +13,7 @@ rsync -axvh $HOME/.config/nitrogen/ ./.config/nitrogen/
 rsync -axvh $HOME/.config/nvim/ ./.config/nvim/
 rsync -axvh $HOME/.config/picom/ ./.config/picom/
 rsync -axvh $HOME/.config/polybar/ ./.config/polybar/
+rsync -axvh $HOME/.config/qtile/ ./.config/qtile/
 rsync -axvh $HOME/.config/ranger/ ./.config/ranger/
 rsync -axvh $HOME/.config/redshift/ ./.config/redshift/
 rsync -axvh $HOME/.config/rofi/ ./.config/rofi/
