@@ -16,7 +16,7 @@
 set $mod Mod4
 
 # Setting Terminal 
-set $terminal alacritty
+set $terminal termite
 
 # set colors
 set $bg-color            #000000
