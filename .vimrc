@@ -14,6 +14,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Disable vi-compatibility mode (use all functions)
 set nocompatible
+" Enable options for filetype or different options same filetype
+set modeline
 " Enable line numbers
 set number
 " Enable relative numbers
@@ -54,7 +56,6 @@ set showtabline=1
 set t_Co=256
 " Enable mouse support after column 223
 set ttymouse=sgr
-
 " Enable syntax highlighting
 syntax on
 
@@ -92,19 +93,23 @@ command Number call EnableNumbers()
 "" Vim plugins                                          ""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable plugins with Vim-Plug
-" To install Vim-Plug, run the following command:
-" > yay -S vim-plug
+" Automatic installation of Vim-Plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocomd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 " To install the plugins, run the command PlugInstall
 " To update the pligins, run the command PlugUpdate
 " To upgrade Vim-Plug, run the command PlugUpgrade
 " To check the status of plugins, run the command PlugStatus
 call plug#begin('~/.vim/plugged')
-  " Nord color theme plugin
-	Plug 'arcticicestudio/nord-vim'
-  " Lightline status bar plugin
-  Plug 'itchyny/lightline.vim'
-  " Vimwiki plugin
-  Plug 'vimwiki/vimwiki'
+" Nord color theme plugin
+Plug 'arcticicestudio/nord-vim'
+" Lightline status bar plugin
+Plug 'itchyny/lightline.vim'
+" Vimwiki plugin
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " Enable file type plugins in ~/.vim
@@ -115,12 +120,12 @@ filetype plugin on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable nord colorscheme on lightline
 let g:lightline = {
-  \ 'colorscheme': 'nord',
-  \ }
+      \ 'colorscheme': 'nord',
+      \ }
 " Set vimwiki files location
 let g:vimwiki_list = [{
-  \ 'path': '~/vimwiki/',
-  \ }]
+      \ 'path': '~/vimwiki/',
+      \ }]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Colorscheme                                          ""
@@ -161,3 +166,14 @@ ino <Right> <Nop>
 
 " Disable Q entering EX mode
 nmap Q <Nop>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" File options                                         ""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Puppet manifest files
+au BufRead,BufNewFile *.pp
+      \ set filetype=puppet
+
+" Enable indentation matching for =>'s
+filetype plugin indent on
+
