@@ -125,12 +125,7 @@ alias gr="grep -r"
 alias vi="vim"
 alias vimwiki="vim $HOME/vimwiki/index.wiki"
 alias rankmirrors="curl -s 'https://www.archlinux.org/mirrorlist/?protocol=https&use_mirror_status=on' | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 25 - > /etc/pacman.d/mirrorlist"
-
-# Kitty configuration
-autoload -Uz compinit
-compinit
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
+alias externalip="curl https://icanhzip.com"
 
 # Environment Variables
 export TERM=xterm-color
