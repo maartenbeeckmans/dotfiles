@@ -166,14 +166,5 @@ ino <Right> <Nop>
 
 " Disable Q entering EX mode
 nmap Q <Nop>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" File options                                         ""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Puppet manifest files
-au BufRead,BufNewFile *.pp
-      \ set filetype=puppet
-
-" Enable indentation matching for =>'s
-filetype plugin indent on
-
+" Disable q entering Macro mode
+nmap q <nop>

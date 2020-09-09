@@ -1,0 +1,15 @@
+; vim:ft=dosini
+
+[config]
+# DPI value for HiDPI screen
+dpi = 90
+display =
+
+top-left = i3 
+top-center = title
+top-right = alsa battery network-short date
+
+interface = wlp0s20f3
+battery = BAT0
+
+

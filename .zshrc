@@ -19,8 +19,8 @@ export ZSH="/home/$(whoami)/.oh-my-zsh"
 ###############################################################
 # ZSH Theme                                                   #
 ###############################################################
-# Using powerlevel10k theme
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# Using agnoster theme
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Enable hyphen-insensitive completion ('-' and '_')
@@ -30,12 +30,13 @@ HYPHEN_INSENSITIVE="true"
 # oh-my-zsh plugins                                           #
 ###############################################################
 plugins=(
+  autojump
   archlinux
   battery
   colored-man-pages
   command-not-found
   common-aliases
-  firewalld
+  fzf
   git
   nmap
   nomad
@@ -57,17 +58,48 @@ alias sshuttleclose='if [ -f /tmp/inuits.pid > /dev/null ]; then killall sshuttl
 alias gup="git pull --rebase; git submodule --quiet sync; git submodule update --init --recursive"
 alias i3config="vim $HOME/.config/i3/config"
 alias zshrc="vim $HOME/.zshrc"
-alias gr="grep -r"
+alias gr="ag"
 alias vi="vim"
+alias vim="nvim"
 alias vimwiki="vim $HOME/vimwiki/index.wiki"
 alias externalip="curl https://icanhzip.com"
+alias laptoponly="$HOME/.screenlayout/laptoponly.sh"
+alias 2screens="$HOME/.screenlayout/2screensvertical.sh"
 
+###############################################################
+# Functions                                                   #
+###############################################################
+function removesubmodule () {
+  git submocule deinit -f -- $1
+  rm -rf .git/modules/$1
+  git rm -f $1
+}
+function checkpuppet () {
+  export BUNDLE_GEMFILE=~/.rake/Gemfile
+  bundle install --gemfile=~/.rake/Gemfile
+  echo "Testing puppet syntax"
+  bundle exec rake --rakefile=~/.rake/rakefile_syntax syntax::manifests
+  echo "Testing templates syntax"
+  bundle exec rake --rakefile=~/.rake/rakefile_syntax syntax::templates
+  echo "Testing hiera syntax"
+  bundle exec rake --rakefile=~/.rake/rakefile_syntax syntax::hiera
+  echo "Testing puppet lint"
+  bundle exec rake --rakefile=~/.rake/rakefile_lint lint
+  echo "All tests checked"
+}
+autoload removesubmodule checkpuppet
 ###############################################################
 # Environment Variables                                       #
 ###############################################################
 export TERM=xterm-color
 export EDITOR=vim
 export LANG=en_US.UTF-8
+export VAGRANT_DEFAULT_PROVIDER=libvirt
+
+###############################################################
+# Application settings                                        #
+###############################################################
+/usr/bin/xset r rate 280 40
 
 ###############################################################
 # Theme settings                                              #

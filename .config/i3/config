@@ -41,12 +41,12 @@ font pango:DejaVu Sans Mono 8
 #################################################################
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh dark
 exec_always --no-startup-id /usr/bin/dunst
-exec_always --no-startup-id /usr/bin/nm-applet
 exec_always --no-startup-id $HOME/.config/redshift/launch.sh
 exec_always --no-startup-id /usr/bin/start-pulseaudio-x11
 exec_always --no-startup-id /usr/bin/nitrogen --restore
 exec --no-startup-id /usr/bin/lxpolkit
-exec --no-startup-id /usr/bin/picom --config ${HOME}/.config/picom/picom.conf
+exec_always --no-startup-id /usr/bin/picom -b --backend glx --vsync
+exec_always --no-startup-id /usr/bin/xrandr --output eDP-1 --mode 1920x1080
 
 #################################################################
 # Keyboard shortcuts                                            #
@@ -56,7 +56,7 @@ exec --no-startup-id /usr/bin/picom --config ${HOME}/.config/picom/picom.conf
 bindsym $mod+F1 exec firefox
 bindsym $mod+F2 exec chromium
 bindsym $mod+F3 exec thunderbird
-bindsym $mod+F4 exec rambox
+bindsym $mod+F4 exec ferdi
 bindsym $mod+F5 exec $terminal -e 'htop'
 bindsym $mod+Ctrl+m exec pavucontrol
 
@@ -138,7 +138,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 #
 # focus the child container
-bindsym $mod+Shift+s focus child
+bindsym $mod+Shift+a focus child
 
   ## Reloading i3 ##
 # reload the configuration file
@@ -227,4 +227,4 @@ bindsym $mod+F12 mode "$mode_system"
 #################################################################
 # Assign Applications to workspace                              #
 #################################################################
-assign [class=Thunderbird|Rambox] 10
+assign [class=Thunderbird|Ferdi] 10

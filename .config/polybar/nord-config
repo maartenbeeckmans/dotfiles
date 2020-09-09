@@ -38,15 +38,9 @@ override-redirect = false
 # Top modules
 top-left = i3 
 top-center = title
-top-right = notify keyboard xbacklight alsa battery network-short date
-
-# Bottom modules
-bottom-left = info-hackspeed
-bottom-center = spotify
-bottom-right = network-detail temperature memory cpu
+top-right = alsa battery network-short date
 
 systray-top = none
-systray-bottom = left
 
 # global style
 line-size = 3
