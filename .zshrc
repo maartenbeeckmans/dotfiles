@@ -20,7 +20,7 @@ export ZSH="/home/$(whoami)/.oh-my-zsh"
 # ZSH Theme                                                   #
 ###############################################################
 # Using agnoster theme
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Enable hyphen-insensitive completion ('-' and '_')
@@ -58,13 +58,15 @@ alias sshuttleclose='if [ -f /tmp/inuits.pid > /dev/null ]; then killall sshuttl
 alias gup="git pull --rebase; git submodule --quiet sync; git submodule update --init --recursive"
 alias i3config="vim $HOME/.config/i3/config"
 alias zshrc="vim $HOME/.zshrc"
-alias gr="ag"
+alias gr="echo '\033[0;31m Use ag instead of grep! \033[0m'"
 alias vi="vim"
 alias vim="nvim"
 alias vimwiki="vim $HOME/vimwiki/index.wiki"
 alias externalip="curl https://icanhzip.com"
 alias laptoponly="$HOME/.screenlayout/laptoponly.sh"
 alias 2screens="$HOME/.screenlayout/2screensvertical.sh"
+alias pulptunnel="echo 'Pulp 3 mgmtdev is now available at http://localhost/pulp/api/v3/status/'; ssh -NL 80:pulp3.mgmtdev:80 proxy_inuits"
+alias firefox="MOZ_ENABLE_WAYLAND=1 firefox"
 
 ###############################################################
 # Functions                                                   #
@@ -87,21 +89,25 @@ function checkpuppet () {
   bundle exec rake --rakefile=~/.rake/rakefile_lint lint
   echo "All tests checked"
 }
-autoload removesubmodule checkpuppet
+function sshtunnel () {
+  ssh -NL ${1} proxy_inuits &
+}
+autoload removesubmodule 
+autoload checkpuppet
+autoload sshtunnel
 ###############################################################
 # Environment Variables                                       #
 ###############################################################
 export TERM=xterm-color
-export EDITOR=vim
+export EDITOR=nvim
 export LANG=en_US.UTF-8
 export VAGRANT_DEFAULT_PROVIDER=libvirt
-
-###############################################################
-# Application settings                                        #
-###############################################################
-/usr/bin/xset r rate 280 40
+export MOZ_ENABLE_WAYLAND=1
 
 ###############################################################
 # Theme settings                                              #
 ###############################################################
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
