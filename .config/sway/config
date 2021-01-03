@@ -1,0 +1,6 @@
+### Sway config ###
+# vi: set ft=conf :
+
+# Read `man 5 sway` for a complete reference.
+
+include conf.d/*

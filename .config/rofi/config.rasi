@@ -1,0 +1,3 @@
+configuration {
+	font: "IBM Plex Mono 12";
+}

@@ -1,0 +1,5 @@
+clock
+indicator
+image=~/.config/swaylock/wallpaper
+indicator-y-position=360
+datestr=%a %d/%m/%Y

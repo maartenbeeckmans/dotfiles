@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/maarten/gitInuits/puppet/mgmt/mgmt-puppet5/modules/internal/profile_base/manifests/logrotate'
+let g:netrw_dirhist_8='/home/maarten/gitInuits/puppet/mgmt/mgmt-puppet5/modules/internal/profile_base/manifests'
+let g:netrw_dirhist_7='/home/maarten/TestEnvironment/home-network/puppet/vagrant/modules/internal/profile_seaweedfs/manifests'
+let g:netrw_dirhist_6='/home/maarten/gitInuits/puppet/kube/puppet-tree-k8s/modules/internal/profile_kubernetes/manifests'
+let g:netrw_dirhist_5='/home/maarten/gitInuits/puppet/kube/puppet-tree-k8s/modules/internal/profile_kubernetes'
+let g:netrw_dirhist_4='/home/maarten/git/puppet/puppet-environment/modules/internal/profile_base/manifests/motd'
+let g:netrw_dirhist_3='/home/maarten/git/puppet/puppet-environment/modules/internal/profile_base/manifests/firewall'
+let g:netrw_dirhist_2='/home/maarten/git/puppet/puppet-environment/modules/internal/profile_base/manifests/motd'
+let g:netrw_dirhist_1='/home/maarten/git/puppet/puppet-environment/modules/internal/profile_base/manifests/firewall'
+let g:netrw_dirhist_0='/home/maarten/gitInuits/jenkins/package-config-dsl/prod/build/sonarscanner'

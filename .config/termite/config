@@ -2,7 +2,7 @@
 allow_bold = true
 bold_is_bright = true
 clickable_url = true
-font = Source Code Pro 12
+font = MesloLGS NF 12
 fullscreen = true
 icon_name = terminal
 scroll_on_output = true
