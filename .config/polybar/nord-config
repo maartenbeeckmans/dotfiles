@@ -40,7 +40,7 @@ top-left = i3
 top-center = title
 top-right = alsa battery network-short date
 
-systray-top = none
+systray-top = right
 
 # global style
 line-size = 3
