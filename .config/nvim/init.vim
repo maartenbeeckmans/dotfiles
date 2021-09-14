@@ -1,4 +1,3 @@
-set nobackup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""  __     _____ __  __                    __ _         ""
 ""  \ \   / /_ _|  \/  |   ___ ___  _ __  / _(_) __ _   ""
@@ -57,6 +56,10 @@ set showtabline=1
 set t_Co=256
 " Enable syntax highlighting
 syntax on
+" Remove swap file after save
+set nobackup
+" Enable wayland copy
+noremap Y y:call system("wl-copy", @")<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Vim Alliasses                                        ""

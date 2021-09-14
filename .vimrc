@@ -168,3 +168,8 @@ ino <Right> <Nop>
 nmap Q <Nop>
 " Disable q entering Macro mode
 nmap q <nop>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Additional settings                                  ""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <C-c> :call system("wl-copy", @")<CR>

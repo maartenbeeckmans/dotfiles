@@ -4,7 +4,7 @@ class:
   instance: Alacritty
   general: Alacritty
 scrolling:
-  history: 5000
+  history: 100000
 font:
   normal:
     family: monospace
@@ -20,7 +20,7 @@ font:
   bold_italic:
     family: monospace
     style: Bold Italic
-  size: 8.0
+  size: 12.0
 window:
   padding:
     x: 5
