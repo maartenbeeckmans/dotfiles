@@ -6,6 +6,6 @@ profile work {
   output HDMI-A-2 mode 1920x1080@60Hz position 0,0
 }
 profile ultrawide {
-  output eDP-1 mode 1920x1080@60Hz position 3440,360
   output DP-1 mode 3440x1440@75Hz position 0,0
+  output eDP-1 mode 1920x1080@60Hz position 3440,360
 }

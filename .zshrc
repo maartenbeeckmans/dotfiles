@@ -56,6 +56,7 @@ source $ZSH/oh-my-zsh.sh
 alias inuitssshuttleopen='sshuttleopen proxy02.inuits.eu:443'
 alias localsshuttleopen='sshuttleopen proxy.management.beeckmans.cloud'
 alias homelabsshuttleopen='sshuttleopen proxy.beeckmans.cloud:8443'
+alias hetznersshuttleopen='sshuttleopen vpngateway-hetzner.beeckmans.cloud:8443'
 alias gup="git pull --rebase; git submodule --quiet sync; git submodule update --init --recursive"
 alias gc="git commit --signoff"
 alias i3config="vim $HOME/.config/i3/config"
@@ -70,6 +71,8 @@ alias ip="ip -c"
 alias aursearch="paru -Slq | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru -S"
 alias search="sk --ansi -i -c 'ag --color \"{}\"'"
 alias fixmirrot="sudo reflector -c Belgium,France,Germany,Nederlands --sort rate --latest 60 --save /etc/pacman.d/mirrorlist"
+alias cat="bat -p"
+alias realcat="cat"
 
 ###############################################################
 # Functions                                                   #
@@ -111,10 +114,21 @@ function sshuttleclose () {
   fi
 }
 
+function fixdns () {
+  nmcli -g name,type connection  show  --active | awk -F: '/ethernet|wireless/ { print $1 }' | while read connection
+  do
+    nmcli con mod "$connection" ipv6.ignore-auto-dns yes
+    nmcli con mod "$connection" ipv4.ignore-auto-dns yes
+    nmcli con mod "$connection" ipv4.dns "1.1.1.1 8.8.8.8"
+    nmcli con down "$connection" && nmcli con up "$connection"
+  done
+}
+
 autoload validatepuppet
 autoload sshtunnel
 autoload sshuttleopen
 autoload sshuttleclose
+autoload fixdns
 ###############################################################
 # Environment Variables                                       #
 ###############################################################
@@ -132,3 +146,4 @@ export XDG_CURRENT_DESKTOP=sway
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+autoload -U compinit; compinit

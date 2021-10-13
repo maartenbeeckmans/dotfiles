@@ -73,6 +73,12 @@ command Spellnl set spell spelllang=nl_be
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Vim Function                                         ""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+highlight Evilchars ctermbg=red guibg=red
+autocmd ColorScheme * highlight Evilchars ctermbg=red guibg=red
+"autocmd ColorScheme * highlight Tabs ctermbg=red guibg=red
+match Evilchars /\(\s\+$\|\t\)/
+"match Tabs /\t/
+"
 " Disable line numbers
 function DisableNumbers()
   set nonumber
@@ -91,6 +97,8 @@ endfunction
 " Use allias to call function
 command Number call EnableNumbers()
 
+" Save as sudo
+command W execute ":w !sudo tee %"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Vim plugins                                          ""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""

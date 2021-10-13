@@ -50,7 +50,7 @@
     },
     "network#wireguard": {
         "interval": 5,
-        "interface": "wg-*",
+        "interface": "wg*",
         "format": " {ifname}",
         "format-linked": " ⚠",
         "format-disconnected": " ⚠",
