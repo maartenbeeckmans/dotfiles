@@ -24,7 +24,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}% ",
+        "format": "{capacity}% ",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
@@ -43,6 +43,14 @@
     "network#wired": {
         "interval": 5,
         "interface": "enp*",
+        "format-ethernet": "",
+        "format-linked": " ⚠",
+        "format-disconnected": " ⚠",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "network#wired": {
+        "interval": 5,
+        "interface": "enp0s20f0u4u1i5",
         "format-ethernet": "",
         "format-linked": " ⚠",
         "format-disconnected": " ⚠",
@@ -72,7 +80,6 @@
             "portable": "",
             "car": "",
             "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+        }
     }
 }

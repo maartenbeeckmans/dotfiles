@@ -1,11 +1,19 @@
 profile standalone {
   output eDP-1 mode 1920x1080@60Hz position 0,0
 }
+profile ultrawide {
+  output DP-1 mode 3440x1440 position 0,0
+  output eDP-1 mode 1920x1080 position 3440,360
+}
 profile work {
   output eDP-1 mode 1920x1080@60Hz position 0,1080
   output HDMI-A-2 mode 1920x1080@60Hz position 0,0
 }
-profile ultrawide {
-  output DP-1 mode 3440x1440@75Hz position 0,0
-  output eDP-1 mode 1920x1080@60Hz position 3440,360
+profile inuits-ghent-qhd-1 {
+  output "Iiyama North America PL2792QN 1179224001629" enable mode 2560x1440 transform normal position 0,0
+  output "eDP-1" enable mode 1920x1080 transform normal position 320,1440
+}
+profile inuits-ghent-qhd-2 {
+  output "Iiyama North America PL2792QN 1179224001595" enable mode 2560x1440 transform normal position 0,0
+  output "eDP-1" enable mode 1920x1080 transform normal position 320,1440
 }

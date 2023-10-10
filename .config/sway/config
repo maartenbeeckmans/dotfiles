@@ -3,4 +3,6 @@
 
 # Read `man 5 sway` for a complete reference.
 
+#xwayland disable
+
 include conf.d/*

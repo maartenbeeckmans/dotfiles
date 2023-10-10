@@ -22,7 +22,7 @@ set number
 set relativenumber
 " Disable startup message
 set shortmess+=I
-" Enable <Backspace> over anything 
+" Enable <Backspace> over anything
 set backspace=indent,eol,start
 " Buffer becomes hidden when it is abandoned
 set hidden
@@ -116,11 +116,25 @@ endif
 call plug#begin('~/.vim/plugged')
 " Nord color theme plugin
 Plug 'arcticicestudio/nord-vim'
+" Ayu color them plugin
+Plug 'ayu-theme/ayu-vim'
 " Lightline status bar plugin
 Plug 'itchyny/lightline.vim'
 " Vimwiki plugin
 Plug 'vimwiki/vimwiki'
+" Disable jamming jklm
+Plug 'takac/vim-hardtime'
+" Git plugin
+Plug 'tpope/vim-fugitive'
+" Surrond plugin
+Plug 'tpope/vim-surround'
+" Fuzzy finder
+Plug 'junegunn/fzf.vim'
+" Ale plugin
+Plug 'w0rp/ale'
 call plug#end()
+set termguicolors     " enable true colors support
+let ayucolor="light"  " for light version of theme
 
 " Enable file type plugins in ~/.vim
 filetype plugin on
@@ -130,7 +144,7 @@ filetype plugin on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable nord colorscheme on lightline
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'ayu',
       \ }
 " Set vimwiki files location
 let g:vimwiki_list = [{
@@ -140,9 +154,8 @@ let g:vimwiki_list = [{
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Colorscheme                                          ""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable Nord Colorscheme
-" Requires the 'arcticicestudio/nord-vim' plugin
-colorscheme nord
+" Enable Ayu Colorscheme
+colorscheme ayu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Syntastic                                            ""
