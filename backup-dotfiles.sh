@@ -23,5 +23,6 @@ rsync -axvh $HOME/.config/sway/ ./.config/sway/
 rsync -axvh $HOME/.config/swaylock/ ./.config/swaylock/
 rsync -axvh $HOME/.config/termite/ ./.config/termite/
 rsync -axvh $HOME/.config/waybar/ ./.config/waybar/
+rsync -axvh $HOME/.config/zsh/ ./.config/zsh/
 
 echo "Backing up config files complete"
